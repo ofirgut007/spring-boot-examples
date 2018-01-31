@@ -1,0 +1,8 @@
+FROM java
+
+RUN apt-get update && apt-get install -y
+
+COPY res.war /home/ec2-user/WORKSPACE
+WORKDIR /home/ec2-user/WORKSPACE
+
+ENTRYPOINT ["/home/ec2-user/WORKSPACE/res.war"]
