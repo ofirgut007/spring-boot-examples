@@ -1,8 +1,11 @@
-FROM java
+FROM tomcat:8.5.15-jre8
 
 RUN apt-get update && apt-get install -y
 
-COPY res.war /home/ec2-user/WORKSPACE
-WORKDIR /home/ec2-user/WORKSPACE
+ADD tomcat-users.xml /usr/local/tomcat/conf/
+ADD context.xml /usr/local/tomcat/webapps/manager/META-INF/context.xml
+ADD res.war /usr/local/tomcat/webapps/
 
-ENTRYPOINT ["/home/ec2-user/WORKSPACE/res.war"]
+CMD ["catalina.sh", "run"]
+
+EXPOSE 8080
