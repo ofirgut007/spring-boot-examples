@@ -8,4 +8,4 @@ ADD spring-boot-package-war/target/spring-boot-package-war-ofir_*.war /usr/local
 
 CMD ["catalina.sh", "run"]
 
-EXPOSE 8080
+EXPOSE 8081
