@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y
 
 ADD tomcat-users.xml /usr/local/tomcat/conf/
 ADD context.xml /usr/local/tomcat/webapps/manager/META-INF/context.xml
-ADD res.war /usr/local/tomcat/webapps/
+ADD spring-boot-package-war-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
 
 CMD ["catalina.sh", "run"]
 
